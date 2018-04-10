@@ -115,14 +115,14 @@ Strings are used to represent text. They are written by enclosing content in quo
 'Float on the ocean'
 ```
 
-Certain characters require *escaping* to be used properly in strings. Escaping is done with a backslash (\) followed by some set of characters. Some examples include:
+Certain characters require *escaping* to be used properly in strings. Escaping is done with a backslash (\\) followed by some set of characters. Some examples include:
 ```javascript
 '\n' // new line
 '\'hello\'' // returns "hello"; a literal single quote
 '\\' // returns "\"; a literal backslash
 ```
 
-Strings have been modeled as a series of bits. JavaScript does this based on the *Unicode* standard. This standard assigns a number to virtually every character you would ever need. If every character is associated with a number, than a string can be described by a sequence of numbers. JavaScript's representation uses 16 bits per string element, which provides up to 2<sup>16</sup> different characters. Unicode defines more characters than 16 bits would allow, so some characters take up two string elements and therefore are afforded 32 bits.
+Strings have been modeled as a series of bits. JavaScript does this based on the *Unicode* Standard. This standard assigns a number to virtually every character you would ever need. If every character is associated with a number, than a string can be described by a sequence of numbers. JavaScript's representation uses 16 bits per string element, which provides up to 2<sup>16</sup> different characters. Unicode defines more characters than 16 bits would allow, so some characters take up two string elements and therefore are afforded 32 bits.
 
 The plus operator (+) can be used on strings for the purpose of concatenation. See below:
 
@@ -227,3 +227,18 @@ Place:  128  64  32  16  8  4  2  1
 
 6. What is NaN? What type is it?
 > NaN stands for "not a number". It is the result of any arithmetic that won't yield a meaningful result, such as ```0 / 0``` or ```'boom' * 4```. It's of type number even though its an abbreviation for "not a number".
+
+7. What is the *Unicode Standard*? How does it help with setting a value to strings in JavaScript (or any programming language really)?
+> The Unicode Standard is a character coding system designed to support worldwide interchange of written text. The Unicode Standard assigns a number to virtually every character you would ever need. With every character being associated to a number, strings can then be described by a sequence of numbers, and in turn a sequence of bits. JavaScript string elements are 16 bits. Unicode defines more characters than 16 bits would allow, so some characters take up two string elements and therefore are afforded 32 bits.
+
+8. How is a *template literal* defined? What benefits does it provide?
+> Template literals are defined using backticks (\`). The two benefits it offers are that it can span multiple lines and it allows you to embed expressions and values without using concatenation. The embeded expression or value is defined using a dollar sign and curly braces (```${value}```);
+
+9. What is the difference between a unary, binary, and ternary operator?
+> The operators take 1, 2, and 3 operands respectively.
+
+10. What type of value would you use to represent "on" and "off" for a light bulb?
+> Boolean
+
+11. What is the difference between the ```==``` and ```===``` comparison operators?
+> Both operators are checking for equality. The ```==``` operator will coerce the type of the second operand to match the first operand. The ```===``` operator will not coerce types. This in essence makes the ```==``` operator check for equality of value, whereas the ```===``` operator will check for equality of value and type.
