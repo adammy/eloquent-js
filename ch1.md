@@ -205,6 +205,38 @@ For string comparison, note that the order is uppercase letters, lowercase lette
 
 #### Logical Operators ####
 
+There are three logical operators that can be applied to Boolean values: *and*, *or*, and *not*.
+
+The *and* operator is represented by ```&&```. It is a binary operator that returns ```true``` if both operands provided to it evaluated to true (maybe start to mention truthy/falsy). Example below:
+
+```javascript
+(1 > 0) && (2 > 1) // returns true
+(1 > 0) && (2 === 1) // returns false
+```
+
+The *or* operator is represented by ```||```. It is a binary operator that returns ```true``` if either of the operands provided to it are true. Example below:
+
+```javascript
+(1 > 0) || (2 > 1) // returns true
+(1 > 0) || (2 === 1) // returns true
+(1 < 0) || (2 === 1) // returns false
+```
+
+The *not* operator is represented by an exclamation mark (!). It is a unary operator the reverses/flips the value given to it. If the operand provided would evaluate to true, applying the *not* operator flips it and returns false and vice versa. Example below:
+
+```javascript
+!(1 > 0) // returns false
+!('Adam' === 'Adam') // returns false
+!(1 > 5) // returns true
+```
+
+There is one more logical operator that is called a *ternary* operator. It differs from unary and binary operators in that it operates on three operands. It is defined with a question mark (?) and a colon (:). The operand left of the question mark is evaluated. To the right of the question mark are two other operands, separated by a colon. If the condition on the left evaluates to true, the overall expression returns the operand left of the colon. If false, it returns the operand to the right of the colon. In essense, it will look like ```(expressionToEvaluate) ? returnIfTrue : returnIfFalse```. Additionally, it is sometimes referred to as a *conditional* operator. Examples below:
+```javascript
+true ? 1 : 2 // returns 1
+false ? 1 : 2 // returns 2
+(1 > 5) ? 'Boom' : 'Pow' // returns 'Pow'
+```
+
 ## Quiz Yourself
 
 1. Express the number 45 in binary.
