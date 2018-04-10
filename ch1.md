@@ -143,3 +143,64 @@ var name = 'Adam';
 // Template literal with an expression to be evaluated
 `Half of 100 is ${100 / 2}` // returns "Half of 100 is 50"
 ```
+
+### Unary Operators ###
+
+All of the operations we've seen thus far use *binary* operators, meaning that they require two operands. A *unary* operator only requires one operand.
+
+The minus operator can serve as a binary or unary operator. In the context of a calculation such as `10 -2`, the operator is binary. When setting a number to be negative `-20`, the operator is unary.
+
+Another example of an unary operator is `typeof`, which returns the type of the operand it's provided as a string. Example below:
+
+```javascript
+typeof 2.5 // returns "number"
+typeof 'hello' // returns "string"
+```
+
+### Boolean Values ####
+
+JavaScript has a *Boolean* type, which can have only one of two values: ```true``` or ```false```.
+
+#### Comparison ####
+
+Comparison operators can be used compare operands against each other and return Boolean values. Comparison operators includes:
+
+* ```>``` - greater than
+* ```>=``` - greater than or equal to
+* ```<``` - less than
+* ```<=``` - less than or equal to
+* ```==``` - equal to (uses type coercion)
+* ```!=``` - not equal to (uses type coersion)
+* ```===``` - equal to (compares value and type)
+* ```!==``` - not equal to (compares value and type)
+
+Examples below:
+
+```javascript
+3 > 2 // returns true
+
+3 < 2 // returns false
+
+(3 + 3) >= 6 // returns true
+
+// strings can also be compared
+// it's ordered by the Unicode bit value
+// which is roughly in alphabetical order
+'Aardvark' < 'Zoroaster' // returns true
+
+'Itchy' != 'Scratchy' // returns true
+
+'Apple' == 'Orange' // returns false
+
+// using == or != will coerce the type to be the same
+// so the second operand gets converted to a string
+'true' == true // returns true
+
+// using === or !== will not coerce the type
+// resulting in a different outcome
+'true' === true // returns false
+```
+
+For string comparison, note that the order is uppercase letters, lowercase letters, and non-alphabetic characters.
+
+#### Logical Operators ####
