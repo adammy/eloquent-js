@@ -229,7 +229,7 @@ For string comparison, note that the order is uppercase letters, lowercase lette
 > The Unicode Standard is a character coding system designed to support worldwide interchange of written text. The Unicode Standard assigns a number to virtually every character you would ever need. With every character being associated to a number, strings can then be described by a sequence of numbers, and in turn a sequence of bits. JavaScript string elements are 16 bits. Unicode defines more characters than 16 bits would allow, so some characters take up two string elements and therefore are afforded 32 bits.
 
 8. How is a *template literal* defined? What benefits does it provide?
-> Template literals are defined using backticks (\`). The two benefits it offers are that it can span multiple lines and it allows you to embed expressions and values without using concatenation. The embeded expression or value is defined using a dollar sign and curly braces (```${value}```);
+> Template literals are defined using backticks (\`). The two benefits it offers are that it can span multiple lines and it allows you to embed expressions and values without using concatenation. The embedded expression or value is defined using a dollar sign and curly braces (```${value}```).
 
 9. What is the difference between a unary, binary, and ternary operator?
 > The operators take 1, 2, and 3 operands respectively.
@@ -239,3 +239,5 @@ For string comparison, note that the order is uppercase letters, lowercase lette
 
 11. What is the difference between the ```==``` and ```===``` comparison operators?
 > Both operators are checking for equality. The ```==``` operator will coerce the type of the second operand to match the first operand. The ```===``` operator will not coerce types. This in essence makes the ```==``` operator check for equality of value, whereas the ```===``` operator will check for equality of value and type.
+
+12.
