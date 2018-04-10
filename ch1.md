@@ -204,3 +204,26 @@ Examples below:
 For string comparison, note that the order is uppercase letters, lowercase letters, and non-alphabetic characters.
 
 #### Logical Operators ####
+
+## Quiz Yourself
+
+1. Express the number 45 in binary.
+>```javascript
+Value:    0   0   1   0  1  1  0  1
+Place:  128  64  32  16  8  4  2  1
+```
+
+2. Describe *garbage collection*.
+> Garbage collection is a form of automatic memory management that abstracts that complexity away from the developer. In this process, values that are no longer needed are automatically thrown out and the bits that represented that value can be used for something else.
+
+3. What is *overflowing*?
+> Overflowing is using a value that does not fit with the number of bits allocated for that value. In our context, JavaScript utilizes 64-bit numbers, which includes bits for negative and fractional numbers. It typically should not be a problem as your maximum number is still very large.
+
+4. In what instances are arithmetic calculations guaranteed to return a precise number? What instances are they not? Why?
+> Calculations with whole numbers are guaranteed to be precise. Calculations with fractional numbers are not. Some fractional numbers lose precision when only 64 bits is available to them.
+
+5. Describe the *modulus* operator.
+> The modulus operator returns the remainder of two operands when they're divided.
+
+6. What is NaN? What type is it?
+> NaN stands for "not a number". It is the result of any arithmetic that won't yield a meaningful result, such as ```0 / 0``` or ```'boom' * 4```. It's of type number even though its an abbreviation for "not a number".
