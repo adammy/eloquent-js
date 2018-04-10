@@ -72,7 +72,9 @@ Number expressions are written as follows:
 
 ```javascript
 42 // standard whole number
+-42 // negative whole number
 9.81 // fractional number
+-9.81 // negative fractional number
 2.998e8 // scientific notation; e = exponent; 2.998 x 10^8 = 299,800,000
 ```
 
