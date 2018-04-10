@@ -66,4 +66,78 @@ JavaScript represents numbers using 64 bits. This means the amount of numbers th
 
 *Overflow* is to use a value that does not fit with the number of bits allocated. For example, lets say we're have an 8-bit number that's only used for positive, whole numbers. That would leave us with a max value of 2<sup>8</sup> or 256. Attempting to represent 257 with this pattern is overflowing.
 
-Not all whole numbers below 18 quintillion fit into a JavaScript number because those bits can also represent negative and non-whole numbers.
+Not all whole numbers below 18 quintillion fit into a JavaScript number because those bits can also represent negative and fractional numbers.
+
+Number expressions are written as follows:
+
+```javascript
+42 // standard whole number
+9.81 // fractional number
+2.998e8 // scientific notation; e = exponent; 2.998 x 10^8 = 299,800,000
+```
+
+#### Arithmetic ####
+
+Calculations with whole numbers are guaranteed to be precise. Calculations with fractional numbers are not. Some fractional numbers lose precision when only 64 bits is available to them.
+
+Arithmetic operations take two *operands* and an *operator* and return a new value. Example below:
+
+```javascript
+10 + 4 // returns 14
+10 + 4 * 11 // returns 54; see precedence
+(10 + 4) * 11 // returns 154
+```
+
+One arithmetic operator that is not immediately obvious is ```%```, which returns a *remainder* of two operands. This is sometimes referred to as a modulo, the modulus operator, or the remainder operator. Example below:
+
+```javascript
+144 % 12 // returns 0 because 144 / 12 is equal to 12 with no remainder
+314 % 100 // returns 14 because 314 / 100 is equal to 3 with a remainder of 14
+```
+
+#### Special Numbers ####
+
+In JavaScript, there are three values that are considered numbers, but don't behave or look like a normal number.
+
+The first two are ```Infinity``` and ```-Infinity```, which represent positive and negative infinities. It's nonsense really.
+
+The last value is ```NaN```, which stands for "not a number". You will get this value if you attempt any arithmetic that won't yield a meaningful result, such as ```0 / 0``` or ```'boom' * 4```.
+
+### Strings ###
+
+Strings are used to represent text. They are written by enclosing content in quotes. You can use single quotes, double quotes, or backticks as seen below:
+
+```javascript
+`Down on the sea`
+"Lie on the ocean"
+'Float on the ocean'
+```
+
+Certain characters require *escaping* to be used properly in strings. Escaping is done with a backslash (\) followed by some set of characters. Some examples include:
+```javascript
+'\n' // new line
+'\'hello\'' // returns "hello"; a literal single quote
+'\\' // returns "\"; a literal backslash
+```
+
+Strings have been modeled as a series of bits. JavaScript does this based on the *Unicode* standard. This standard assigns a number to virtually every character you would ever need. If every character is associated with a number, than a string can be described by a sequence of numbers. JavaScript's representation uses 16 bits per string element, which provides up to 2<sup>16</sup> different characters. Unicode defines more characters than 16 bits would allow, so some characters take up two string elements and therefore are afforded 32 bits.
+
+The plus operator (+) can be used on strings for the purpose of concatenation. See below:
+
+```javascript
+'con' + 'cat' + 'e' + 'nate' // returns "concatenate"
+```
+
+There is one difference of note between the three quoting methodologies: using backticks (\`) creates a *template literal*, which can span multiple lines and allows you to embed expressions and values without using concatenation. Example below:
+```javascript
+var name = 'Adam';
+
+// Without template literal
+'My name is ' + name  // returns "My name is Adam"
+
+// With template literal
+`My name is ${name}` // returns "My name is Adam"
+
+// Template literal with an expression to be evaluated
+`Half of 100 is ${100 / 2}` // returns "Half of 100 is 50"
+```
