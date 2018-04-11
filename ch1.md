@@ -253,7 +253,38 @@ age; // returns null
 
 ### Automatic Type Conversion ###
 
+This was mentioned briefly before, but when an operator is applied to the wrong type of value, JavaScript will convert that value to the type is needs using what is called *type coercion*. Examples below:
 
+```javascript
+8 * null // returns 0; null is converted to the number 0
+'5' - 1 // returns 4; the string "5" is converted to the number 5
+'5' + 1 // returns "51"; the number 1 is converted to a string and the operands are concatenated
+"five" * 2 // returns NaN; NaN is returned when meaningless arithmetic is attempted
+false == 0 // returns true; the number 0 is converted to the Boolean false
+```
+
+The examples above help demonstrate why you should use the three-character comparison operators (```===``` and ```!==```) liberally. It prevents misinterpretations and unexpected type conversions.
+
+### Short-Circuiting of Logical Operators ###
+
+The logical operators ```&&``` and ```||``` handle values in a different peculiar way. They will convert the value on the left side to a Boolean type in order to decide what to do. Depending on the result, the operator will return either the left- or right-hand value.
+
+The ```||``` operator will return the value to its left when that can be converted to true, otherwise it returns the value on the right. We can use this as a way to have a default value of sorts. Example below:
+
+```javascript
+null || 'user' // returns "user"
+'Adam' || 'user' // returns "Adam"
+```
+
+The ```&&``` operator works similarly, but the other way around. When the value to its left converts to false, it returns that value, otherwise it returns the right value.
+
+Another important property of these two operators is that the operand to the right is evaluated only when necessary. In the case of ```true || x```, it doesn't matter what ```x``` is because the first operand will result to true. This means that ```x``` is never evaluated and is flat-out ignored. This is called *short-circuit evaluation*.
+
+## Summary ##
+
+We explored four types of JavaScript values: numbers, strings, Booleans, and undefined.
+
+You can combine and transform values with operators. We saw binary operators for arithmetic (+, -, \*, /, and %), string concatenation (+), comparison (==, !=, ===, !==, <=, >=), and logic (&& and ||), as well as several unary operators (- to negate a number, ! to negate logically, and ```typeof``` to find a value's type), and a ternary operator (?:).
 
 ## Quiz Yourself
 
@@ -292,3 +323,9 @@ age; // returns null
 
 12. What is the difference between ```undefined``` and ```null```?
 > ```undefined``` means a variable has been declared, but has not been assigned a value. ```null``` is an assignment in and of itself. It can be assigned to a variable as a representation of no value.
+
+13. What happens when you try to evaluate ```'8' - 2```? What about ```'8' + 2```? Explain your answer.
+> In the first expression, evaluating the string "8" minus the number 2 will result in the string being converted to a number type. This would then leave you with ```8 - 2```, which will return 6. This happens due to type coercion. In the second expression, type coercion still happens, but it happens differently. Instead the string "8" is kept the same and the number 2 is converted into a string. This would leave you with ```'8' + '2'```, which would return "82" due to the two strings being concatenated.
+
+14. Describe *short-circuit evaluation*.
+> When using certain logical operators, such as the *or* operator (```||```), the second operand is only executed/evaluated if the first operand is falsy. This prevents the program from doing unnecessary work.
