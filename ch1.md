@@ -230,7 +230,7 @@ The *not* operator is represented by an exclamation mark (!). It is a unary oper
 !(1 > 5) // returns true
 ```
 
-There is one more logical operator that is called a *ternary* operator. It differs from unary and binary operators in that it operates on three operands. It is defined with a question mark (?) and a colon (:). The operand left of the question mark is evaluated. To the right of the question mark are two other operands, separated by a colon. If the condition on the left evaluates to true, the overall expression returns the operand left of the colon. If false, it returns the operand to the right of the colon. In essense, it will look like ```(expressionToEvaluate) ? returnIfTrue : returnIfFalse```. Additionally, it is sometimes referred to as a *conditional* operator. Examples below:
+There is one more logical operator that is called a *ternary* operator. It differs from unary and binary operators in that it operates on three operands. It is defined with a question mark (?) and a colon (:). The operand left of the question mark is evaluated. To the right of the question mark are two other operands, separated by a colon. If the condition on the left evaluates to true, the overall expression returns the operand left of the colon. If false, it returns the operand to the right of the colon. In essence, it will look like ```(expressionToEvaluate) ? returnIfTrue : returnIfFalse```. Additionally, it is sometimes referred to as a *conditional* operator. Examples below:
 ```javascript
 true ? 1 : 2 // returns 1
 false ? 1 : 2 // returns 2
