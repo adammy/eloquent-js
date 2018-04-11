@@ -237,6 +237,24 @@ false ? 1 : 2 // returns 2
 (1 > 5) ? 'Boom' : 'Pow' // returns 'Pow'
 ```
 
+### Empty Values ###
+
+There are two special values that are used to denote the absence of a meaningful value: ```null``` and ```undefined```.
+
+```undefined``` means a variable has been declared, but has not been assigned a value. ```null``` is an assignment in and of itself. It can be assigned to a variable as a representation of no value. Examples below:
+
+```javascript
+var name; // create a variable, but don't assign a value
+name; // returns undefined
+
+var age = null; // create a variable and assign it to null in the immediate future
+age; // returns null
+```
+
+### Automatic Type Conversion ###
+
+
+
 ## Quiz Yourself
 
 1. Express the number 45 in binary.
@@ -270,6 +288,7 @@ false ? 1 : 2 // returns 2
 > Boolean
 
 11. What is the difference between the ```==``` and ```===``` comparison operators?
-> Both operators are checking for equality. The ```==``` operator will coerce the type of the second operand to match the first operand. The ```===``` operator will not coerce types. This in essence makes the ```==``` operator check for equality of value, whereas the ```===``` operator will check for equality of value and type.
+> Both operators are checking for equality. The ```==``` operator will coerce the type of one operand to match the other operand. The ```===``` operator will not coerce types. This in essence makes the ```==``` operator check for equality of value, whereas the ```===``` operator will check for equality of value and type.
 
-12.
+12. What is the difference between ```undefined``` and ```null```?
+> ```undefined``` means a variable has been declared, but has not been assigned a value. ```null``` is an assignment in and of itself. It can be assigned to a variable as a representation of no value.
