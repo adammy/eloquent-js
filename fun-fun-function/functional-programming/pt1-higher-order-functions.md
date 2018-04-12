@@ -43,7 +43,7 @@ for (let i = 0; i < animals.length; i++) {
 Now let's rewrite this using the filter() method:
 
 ```javascript
-const dogs = animals.filter((animal) => (animal.species === 'dog'));
+const dogs = animals.filter(animal => animal.species === 'dog');
 ```
 
 Looking at the filter() method, we can see that it takes one arguments: a function. This type of function is called a *callback function*. Filter will loop through each animal in the array and pass its value to the callback function. It expects the callback function to return ```true``` or ```false``` based on some specified condition we define in the callback function. In this case, that condition is ```animal.species === 'dog'```. If the condition is true, the particular item/animal will pass through to the new array. Otherwise, it will not. After going through all of the elements/animals, the filter() method will return a new array of all elements/animals that passed the condition.
@@ -53,7 +53,7 @@ You can see the filter() example is much shorter than the traditional for loop. 
 Because functions are values, we can also rewrite this solution by passing a variable to the filter() method vs a full anonymous function:
 
 ```javascript
-const isDog = (animal) => (animal.species === 'dogs');
+const isDog = animal => animal.species === 'dogs';
 
 const dogs = animals.filter(isDog);
 ```
