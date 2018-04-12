@@ -64,6 +64,12 @@ This example would operate in the same way as the previous example, but we broke
 const notDogs = animals.filter(!isDog);
 ```
 
+One more example of an Array.prototype method that is similar to filter() is the find() method. Find will operate similarly to filter, but it will only return the first element it finds that meet the provided condition. If we wanted to find the animal named 'Caro', we could do that like so:
+
+```javascript
+const caro = animals.find(animal => animal.name === 'Caro');
+```
+
 The benefit to all of this is the ability to divide code into small, simple functions and compose them together using higher-order functions. Small, simple functions are easy to test, easy to debug, and they take less time to reason about and write.
 
 ## Quiz Yourself ##
@@ -79,6 +85,9 @@ The benefit to all of this is the ability to divide code into small, simple func
 
 4. Describe how the filter() method on the Array.prototype works.
 > The filter() method is meant to return a new array of elements that pass a condition provided by a callback function. The method takes a callback function as an argument. That callback function takes the individual element as an argument. The callback function should return ```true``` or ```false``` to determine in the element has met the condition.
+
+5. What is the difference between filter() and find() on the Array.prototype?
+> The filter() method will return a new array of all elements that pass a specified condition. The find() method will only return the first element it finds that meets the specified condition.
 
 5. Describe the benefits of higher-order functions.
 > Higher-order functions provide us with the ability to divide code into small, simple functions and compose them together. Small, simple functions are easy to test, easy to debug, and they take less time to reason about and write.
