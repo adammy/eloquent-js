@@ -16,6 +16,8 @@ Functions can be assigned to variables because they are values. Other variables 
 
 Functions that take other functions as arguments are called *higher-order functions*. The filter() method on Array.prototype is a good example of a higher-order function.
 
+Let's start with an array of animals:
+
 ```javascript
 const animals = [
 	{ name: 'Flufflykins', species: 'rabbit' },
@@ -27,7 +29,7 @@ const animals = [
 ];
 ```
 
-Let's start with an array of animals. Lets say we want to only get back the animals that are dogs because we're writing enterprise-level software damnit. One solution would be to utilize a for loop like so:
+Now let's say we want to only get back the animals that are dogs because we're writing enterprise-level software damnit. One solution would be to utilize a for loop like so:
 
 ```javascript
 let dogs = [];
@@ -48,7 +50,7 @@ Looking at the filter() method, we can see that it takes one arguments: a functi
 
 You can see the filter() example is much shorter than the traditional for loop. It's because the problem is broken down into small functions. In this case, the filter() method will run the for loop and push elements into a new array. The callback function provides the condition for whether or not the element should pass to that new array. The problem is broken up into smaller functions leaving a cleaner and more concise codebase.
 
-Because functions are values, we can also rewrite this solution by passing a variable to the filter() method vs a full anonymous function.
+Because functions are values, we can also rewrite this solution by passing a variable to the filter() method vs a full anonymous function:
 
 ```javascript
 const isDog = (animal) => (animal.species === 'dogs');
