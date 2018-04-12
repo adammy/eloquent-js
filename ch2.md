@@ -28,9 +28,31 @@ const awesome = true;
 
 Imagine bindings as tentacles, rather than boxes. They do not contain values, but that they grasp them. This means that two bindings can refer to the same value.
 
+The ```var``` keyword is the way bindings were declared in pre-2015 JavaScript. Going forward, using ```let``` and ```const``` is preferred, but it's still good to know the quirks of ```var``` for legacy code.
+
+```var``` and ```let``` are used to declare bindings that can be assigned and/or reassigned at a later point. ```var``` has *function scope*, while ```let``` has *block scope*. More about this in the next chapter.
+
+```const``` is used to declare a binding that has a *constant* value. This means that its value must be set upon initialization and that the value cannot be changed.
+
 ## Binding Names ##
 
+Binding names can be any word. Digits can be a part of a binding name, but the name cannot start with a digit. Binding names can include dollar signs ($) and underscores (_), but no other special character is allowed.
+
+*Keywords* are words in the programming language that have special meaning, including ```let```, ```const```, or ```for```. Keywords cannot be used for binding names.
+
+Examples of appropriately-declared binding names below:
+
+```javascript
+const name = 'Adam MacDonald';
+const firstName = 'Adam';
+const age = 25;
+let greeting1 = 'hello';
+let greeting2 = 'awesome sauce';
+```
+
 ## The Environment ##
+
+The collection of bindings and their values that exist at a given time is called the *environment*. An in-depth example of an environment could be a browser. The browser has functions to interact with the currently-loaded website, to read mouse input, etc. It also has bindings and functions that you have initialized.
 
 ## Functions ##
 
