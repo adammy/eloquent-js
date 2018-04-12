@@ -26,9 +26,50 @@ function person(name) {
 
 In this example, the greet() functions lexical environment is the person function. This means that greet() has access to the variables defined in person(), including any arguments supplied.
 
+## Emulating Private Properties & Methods with Closures ##
+
+One of the better practical examples of closures is to use it for privatizing data and reducing your footprint on the global namespace. One way to do this is with what is know as the *module pattern*:
+
+```javascript
+const counter = (function () {
+
+	let privateCounter = 0;
+
+	// private method that is utilized by the public methods
+	function changeBy(val) {
+		privateCounter += val;
+	}
+
+	// public methods
+	return {
+		increment: function () {
+			changeBy(1);
+		},
+		decrement: function () {
+			changeBy(-1);
+		},
+		value: function () {
+			return privateCounter;
+		}
+	}
+
+}());
+
+counter.value(); // 0
+counter.increment();
+counter.increment();
+counter.value(); // 2
+counter.decrement();
+counter.value(); // 1
+```
+
+In this example, we create a single lexical environment that is shared by our methods: increment(), decrement(), value(), and changeBy(). The shared lexical environment is created in an anonymous function, which is executed immediately. The private items (privateCounter and changeBy()) are not accessible outside of the anonymous function. Instead, they must be accessed by the three public methods that are returned from the anonymous function. The functions are all closures with the same lexical environment.
+
 ## Quiz Yourself ##
 
 1. Describe how the reduce() method on the Array.prototype works.
 > The reduce() method is used for more complex transformations that aren't possible with other Array.prototype methods. The reduce() method takes two arguments: a callback function (standard) and an initial value for an accumulator. The callback function takes two arguments as well: the accumulator (which on its first iteration is set to the initial value you provided) and the current element in the array. The callback function is intended to return a new value for the accumulator to be used in the next iteration.
 
-Source: https://www.youtube.com/watch?v=1DMolJ2FrNY
+Sources:
+https://www.youtube.com/watch?v=1DMolJ2FrNY
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
