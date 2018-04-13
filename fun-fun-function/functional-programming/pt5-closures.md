@@ -67,9 +67,11 @@ In this example, we create a single lexical environment that is shared by our me
 
 ## Quiz Yourself ##
 
-1. Describe how the reduce() method on the Array.prototype works.
-> The reduce() method is used for more complex transformations that aren't possible with other Array.prototype methods. The reduce() method takes two arguments: a callback function (standard) and an initial value for an accumulator. The callback function takes two arguments as well: the accumulator (which on its first iteration is set to the initial value you provided) and the current element in the array. The callback function is intended to return a new value for the accumulator to be used in the next iteration.
+1. Describe what a closure is.
+> A closure is the combination of a function and the lexical environment within that function was declared. A functions lexical environment gives it access to variables and arguments supplied by a parent function. It is a way of attempting to not flood the global namespace.
 
 Sources:
+
 https://www.youtube.com/watch?v=1DMolJ2FrNY
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
