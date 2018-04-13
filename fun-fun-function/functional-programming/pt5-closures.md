@@ -70,6 +70,8 @@ In this example, we create a single lexical environment that is shared by our me
 1. Describe what a closure is.
 > A closure is the combination of a function and the lexical environment within that function was declared. A functions lexical environment gives it access to variables and arguments supplied by a parent function. It is a way of attempting to not flood the global namespace.
 
+2. Describe a practical example of a closure.
+
 Sources:
 
 https://www.youtube.com/watch?v=1DMolJ2FrNY
