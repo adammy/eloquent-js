@@ -13,7 +13,7 @@ console.log(dragon('fluffykins', 'small', 'lightning'));
 Now here is the same function using currying:
 
 ```javascript
-let dragon =
+const dragon =
 	name =>
 		size =>
 			element =>
@@ -25,7 +25,7 @@ console.log(dragon('fluffykins')('small')('lightning'));
 The idea of currying is that your function can pass through the application and gradually receive your arguments. An example where the arguments aren't supplied immediately could look something like this:
 
 ```javascript
-let fluffykins = dragon('fluffykins');
+const fluffykins = dragon('fluffykins');
 
 console.log(fluffykins('small')('lightning'));
 ```
